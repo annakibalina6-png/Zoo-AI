@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Выбор питомца</title>
+</head>
+<body>
+
+<h1>Какое животное тебе подходит?</h1>
+
+<label>Есть ли у тебя аллергия?</label><br>
+<select id="allergy">
+  <option value="no">Нет</option>
+  <option value="yes">Да</option>
+</select>
+
+<br><br>
+
+<label>Сколько у тебя свободного времени?</label><br>
+<select id="time">
+  <option value="low">Мало</option>
+  <option value="medium">Средне</option>
+  <option value="high">Много</option>
+</select>
+
+<br><br>
+
+<label>Ты активный человек?</label><br>
+<select id="activity">
+  <option value="low">Нет</option>
+  <option value="high">Да</option>
+</select>
+
+<br><br>
+
+<button onclick="choosePet()">Подобрать питомца</button>
+
+<h2 id="result"></h2>
+
+<script>
+function choosePet() {
+  let allergy = document.getElementById("allergy").value;
+  let time = document.getElementById("time").value;
+  let activity = document.getElementById("activity").value;
+
+  let result = "";
+
+  if (allergy === "yes") {
+    result = "Тебе подойдут: рыбки 🐠 или рептилии 🦎";
+  } else if (time === "low") {
+    result = "Тебе подойдёт: кошка 🐱";
+  } else if (activity === "high") {
+    result = "Тебе подойдёт: собака 🐶";
+  } else {
+    result = "Тебе подойдут: хомяк 🐹 или попугай 🐦";
+  }
+
+  document.getElementById("result").innerText = result;
+}
+</script>
+
+</body>
+</html>
